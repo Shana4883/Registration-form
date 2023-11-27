@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="ind.css">
+</head>
+<body>
+    <h1><b><i>Registration Form </i></b></h1>
+    <form id="registration form" onsubmit="return validateForm()">
+       <i> 
+       <label for="first name"><b>First Name:</b></label>
+       <input type="text" id="firstname" required><br>
+       <br>
+       <label for="last name"><b>Last Name:</b></label>
+       <input type="text" id="lastname" required><br>
+       <br>
+       <label for="email"><b>Email Address:</b></label>
+       <input type="email" id="email" required><br>
+       <br>
+       <label for="pw"><b>Password:</b></label>
+       <input type="password" id="pw" name="pw" required><br>
+       <br>
+       <label for="cpw"><b>Confirm Password:</b></label>
+       <input type="password" id="cpw" name="cpw" required><br>
+       <br>
+       <label for="dob"><b>Date of Birth:</b></label>
+       <input type="date" id="dob" required><br>
+       <br>
+       <label for="gender"><b> Gender:</b></label>
+       <select id="gender" name="gender" required>
+        <option value="male"><b>Male</b></option>
+        <option value="female"><b>Female</b></option>
+        <option value="other"><b>Other</b></option>
+    </select>
+</i>
+    <br>
+    <center> <label for="termsCheckbox">
+       
+        <nobr><div><input type="checkbox" id="termsCheckbox" name="termsCheckbox" required><b><i>I have read and agree to the Terms and Conditions</i></b></nobr></input></div>
+    </label></center>
+
+    <div class="error" id="errorMessage"></div>
+    <button type="submit">Register</button>
+    </form>
+    <script>
+        function validateForm()
+        {
+
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('pw').value;
+        var confirmPassword = document.getElementById('cpw').value;
+        var dob = document.getElementById('dob').value;
+        var gender = document.getElementById('gender').value;
+        var terms = document.getElementById('termsCheckbox').checked;
+
+        var errorMessage = document.getElementById('errorMessage');
+        errorMessage.innerHTML = '';
+        if (password != confirmPassword) {
+            errorMessage.style.color='red';
+            errorMessage.innerHTML += 'Passwords do not match.' + '<br>';
+            return false;
+        }
+
+        if (!terms) {
+            errorMessage.style.color='red';
+            errorMessage.innerHTML += 'You must agree to the Terms and Conditions.' + '<br>';
+            return false;
+        }
+
+    }
+    </script>
+</body>
+</html>
