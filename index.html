@@ -8,16 +8,16 @@
 </head>
 <body>
     <h1><b><i>Registration Form </i></b></h1>
-    <form id="registration form" onsubmit="return validateForm()">
+    <form action="connect.php" method="post" id="registration form" onsubmit="return validateForm()">
        <i> 
        <label for="first name"><b>First Name:</b></label>
-       <input type="text" id="firstname" required><br>
+       <input type="text" name="firstName" id="firstname" required><br>
        <br>
        <label for="last name"><b>Last Name:</b></label>
-       <input type="text" id="lastname" required><br>
+       <input type="text" name="lastName" id="lastname" required><br>
        <br>
        <label for="email"><b>Email Address:</b></label>
-       <input type="email" id="email" required><br>
+       <input type="email" name="Email" id="email" required><br>
        <br>
        <label for="pw"><b>Password:</b></label>
        <input type="password" id="pw" name="pw" required><br>
@@ -26,13 +26,13 @@
        <input type="password" id="cpw" name="cpw" required><br>
        <br>
        <label for="dob"><b>Date of Birth:</b></label>
-       <input type="date" id="dob" required><br>
+       <input type="date" id="dob" name="dateOfBirth" required><br>
        <br>
        <label for="gender"><b> Gender:</b></label>
-       <select id="gender" name="gender" required>
-        <option value="male"><b>Male</b></option>
-        <option value="female"><b>Female</b></option>
-        <option value="other"><b>Other</b></option>
+       <select id="gender"  required>
+        <option value="m" name="gender"><b>Male</b></option>
+        <option value="f" name="gender"><b>Female</b></option>
+        <option value="o" name="gender"><b>Other</b></option>
     </select>
 </i>
     <br>
